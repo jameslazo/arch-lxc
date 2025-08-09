@@ -8,7 +8,7 @@ export EDITOR=/usr/bin/vim
 export UTF=en_US.UTF-8
 export LANG=$UTF
 export LANGUAGE=$UTF
-export LC_CTYPE=$UTF
+#export LC_CTYPE=$UTF
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=$HOME/.cache
@@ -59,6 +59,6 @@ slog() {
   log=$HOME/slog.md
   today="# $(date '+%Y-%m-%d')"
   entry=$(head -n 1 $log)
-  [ "$today" != "$entry" ] && echo -e "$today\n## Tasks\n- \n\n## Resources\n- []()\n\n$(cat $log)" > $log && vim $log || nvim $log
+  [ "$today" != "$entry" ] && echo -e "$today\n## Tasks\n- [] \n\n## Resources\n- []()\n\n$(cat $log)" > $log && vim $log || vim $log
 }
 
